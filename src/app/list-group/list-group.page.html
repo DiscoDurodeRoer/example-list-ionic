@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>list-group</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Lista -->
+  <ion-list>
+    <!-- Cabecera de la lista -->
+    <ion-list-header>Pokemons</ion-list-header>
+
+    <!-- Agrupador de elementos -->
+    <ion-item-group *ngFor="let type of types">
+      <ion-item-divider>
+        <ion-label>{{type.group}}</ion-label>
+      </ion-item-divider>
+
+      <!-- Mostramos los elementos de ese grupo -->
+      <ion-item *ngFor="let item of type.items">
+        <ion-label>{{item}}</ion-label>
+      </ion-item>
+
+    </ion-item-group>
+
+  </ion-list>
+
+  <ion-button href="/list-standard" routerDirection="root">Standard</ion-button>
+  <ion-button href="/list-sliding" routerDirection="root">Sliding</ion-button>
+  <ion-button href="/list-reorder" routerDirection="root">Reorder</ion-button>
+
+</ion-content>

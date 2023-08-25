@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>list-standard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Lista -->
+  <ion-list>
+    <!-- Cabecera de la lista -->
+    <ion-list-header>Pokemons</ion-list-header>
+    <!-- Elementos -->
+    <ion-item *ngFor="let pokemon of pokemons">
+      <ion-label>{{pokemon}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  
+  <ion-button href="/list-sliding" routerDirection="root">Sliding</ion-button>
+  <ion-button href="/list-reorder" routerDirection="root">Reorder</ion-button>
+  <ion-button href="/list-group" routerDirection="root">Group</ion-button>
+
+</ion-content>

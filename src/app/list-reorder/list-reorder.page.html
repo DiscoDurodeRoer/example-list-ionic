@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>list-reorder</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  <!-- Lista -->
+  <ion-list>
+    <!-- Cabecera de la lista -->
+    <ion-list-header>Pokemons</ion-list-header>
+    <!-- Grupo para reordenar -->
+    <!-- $any -> convierte a any -->
+    <ion-reorder-group [disabled]="false" (ionItemReorder)="handleOrder($any($event))">
+      <ion-item *ngFor="let pokemon of pokemons">
+        <ion-label>{{pokemon}}</ion-label>
+        <!-- Indica que se puede mover -->
+        <ion-reorder></ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+    
+  </ion-list>
+
+  <ion-button href="/list-standard" routerDirection="root">Standard</ion-button>
+  <ion-button href="/list-sliding" routerDirection="root">Sliding</ion-button>
+  <ion-button href="/list-group" routerDirection="root">Group</ion-button>
+
+</ion-content>
